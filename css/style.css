@@ -1,0 +1,742 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.fixed {
+  width: 100%;
+  height: 64px;
+}
+
+.nav {
+  background-color: #000000;
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fafafa;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 10px;
+  position: fixed;
+  z-index: 100;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.nav-burger {
+  width: 54px;
+  height: 100%;
+  border-right: 1px solid rgba(250, 250, 250, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 600ms cubic-bezier(0.52, -0.8, 0.52, 0.52);
+}
+
+.nav-burger-block {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease-in;
+}
+
+.nav-burger-block.active {
+  transform: rotate(-45deg);
+}
+
+.nav-line {
+  background-color: #ffffff;
+  height: 2px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.nav .line1 {
+  transition: transform 600ms cubic-bezier(0.52, -0.8, 0.52, 0.52);
+  transform-origin: right;
+  width: 50%;
+}
+
+.nav .line1.active {
+  transform: rotate(-90deg) translateX(1px);
+}
+
+.nav .line2 {
+  height: 2px;
+  width: 100%;
+}
+
+.nav .line3 {
+  transition: transform 600ms cubic-bezier(0.52, -0.8, 0.52, 0.52);
+  transform-origin: left;
+  width: 50%;
+  align-self: flex-end;
+}
+
+.nav .line3.active {
+  transform: rotate(-90deg) translateX(-1px);
+}
+
+.nav-logo {
+  width: 120px;
+  height: 50px;
+  background: url("./../img/logo/logo.jpg");
+  background-size: cover;
+}
+
+.nav-list {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  padding: 0 15px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  padding-top: 4px;
+}
+
+.nav-link:hover {
+  border-color: #fafafa;
+}
+
+.nav-right {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-cart {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-left: 1px solid rgba(250, 250, 250, 0.15);
+  border-right: 1px solid rgba(250, 250, 250, 0.15);
+}
+
+.header {
+  background: url("https://s3.amazonaws.com/beatstarsdata/proweb/2.0/user-styles/uploads/published/63746/main_bg.jpg?_=1638473760");
+  width: 100%;
+  height: 710px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-search {
+  background-color: #ffffff;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  margin-top: 150px;
+}
+
+.header-search-btn {
+  background-color: #f5f5f5;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  height: 52px;
+  padding: 0 10px;
+  border: 0;
+  outline: none;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.header-input {
+  padding: 0 20px;
+  width: 650px;
+  outline: none;
+  border: 0;
+  height: 100%;
+  font-size: 17px;
+  color: #191919;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+.header-track {
+  color: #fafafa;
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.header-track-text {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.header-track-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.header-track-fun {
+  display: flex;
+}
+
+.header-track-info {
+  margin-left: 26px;
+}
+
+.header-track-img {
+  background: url("./../img/beat/reflect.png");
+  width: 130px;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+}
+
+.playlist {
+  background-color: #141414;
+  color: #fafafa;
+  padding: 20px 0;
+}
+
+.playlist-head {
+  width: 100%;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #9e9e9e;
+}
+
+.playlist-head-title {
+  padding: 0 25px 0 60px;
+}
+
+.playlist-head-tags {
+  margin: 0 25px;
+}
+
+.playlist-box {
+  width: 1166px;
+  margin: 0 auto;
+}
+
+.playlist-button {
+  padding: 0 16px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.playlist-item {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+}
+
+.playlist-item:hover .playlist-title {
+  text-decoration: underline;
+}
+
+.playlist-title {
+  padding: 0 25px 0 60px;
+  font-weight: 600;
+  transition: 0.2s ease-in;
+}
+
+.playlist-tags {
+  margin: 0 25px;
+  display: flex;
+}
+
+.playlist-img {
+  width: 44px;
+  height: 44px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+  margin-top: -22px;
+  border-radius: 3px;
+  border-top: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.playlist-border {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 93%;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.15);
+}
+
+.playlist-fun {
+  display: flex;
+  justify-content: right;
+}
+
+.playlist-tag {
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: #191919;
+  border-radius: 20px;
+  color: #9e9e9e;
+  text-transform: lowercase;
+  padding: 0 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.playlist-tag:hover {
+  text-decoration: underline;
+}
+
+.playlist-tag a {
+  color: #9e9e9e;
+  text-decoration: none;
+}
+
+.playlist-btn {
+  margin: 20px 0;
+}
+
+.playlist-btn-block {
+  display: flex;
+  justify-content: center;
+}
+
+.kits {
+  background-color: #000000;
+  padding: 40px 0;
+  color: #fafafa;
+  text-align: center;
+}
+
+.kits-item {
+  height: 232px;
+  width: 175px;
+}
+
+.kits-item-img {
+  width: 175px;
+  height: 175px;
+  background: url("./../img/kits/dusk guitar.png");
+  background-size: cover;
+}
+
+.kits-item-title {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.kits-item-price {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.kits-items {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  padding: 40px 0 20px;
+}
+
+.lease {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 0 100px;
+}
+
+.lease-item {
+  width: 224px;
+  text-align: center;
+  padding: 55px 15px 20px;
+  transition: all 0.2s ease-in;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lease-item-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lease-item-price {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.lease-item ul {
+  margin: 0;
+  padding: 0;
+}
+
+.lease-item li {
+  font-size: 12px;
+  list-style-type: none;
+}
+
+.lease-item:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.lease-item:hover .btn {
+  background-color: #000000;
+  color: #ffffff;
+  height: 40px;
+}
+
+.lease-items {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.lease-deals-title {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.lease-deals-items {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.subscribe {
+  width: 100%;
+  height: 767px;
+  background: url("https://s3.amazonaws.com/beatstarsdata/proweb/2.0/user-styles/uploads/published/63746/memberships_bg.jpg?_=1652365627") no-repeat top center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #ffffff;
+  z-index: 0;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.subscribe-bckg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.53;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.contact {
+  background-color: #141414;
+  color: #ffffff;
+  padding: 40px 0 70px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contact-box {
+  width: 590px;
+  margin: 0 auto;
+}
+
+.contact form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact input {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+  padding-bottom: 3px;
+  padding-top: 20px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-info input {
+  width: 285px;
+}
+
+.contact-info-md1 {
+  margin-right: 15px;
+  margin-top: 18px;
+  width: 290px;
+  position: relative;
+}
+
+.contact-info-md2 {
+  margin-top: 18px;
+  position: relative;
+}
+
+.contact-subject {
+  height: 43px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.contact-subject input {
+  width: 100%;
+}
+
+.contact-subject label {
+  transition: all 0.5s ease-in;
+}
+
+.contact-message {
+  height: 43px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.contact-message input {
+  width: 100%;
+}
+
+.contact label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  position: absolute;
+  margin-left: 2px;
+  bottom: 0;
+  transition: all 0.2s ease-in;
+  padding-top: 20px;
+  padding-right: 200px;
+  white-space: nowrap;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: right;
+}
+
+.footer {
+  color: #ffffff;
+  background-color: #000000;
+  padding: 72px 0 92px;
+}
+
+.footer-box {
+  display: flex;
+  width: 1166px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-logo {
+  font-size: 36px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-list-link {
+  padding-bottom: 10px;
+}
+
+.footer-list-link:hover {
+  text-decoration: underline;
+}
+
+.per-45 {
+  width: 45%;
+}
+
+.per-10 {
+  width: 10%;
+}
+
+.per-5 {
+  width: 5%;
+}
+
+.per-20 {
+  width: 20%;
+}
+
+.per-50 {
+  width: 50%;
+}
+
+.per-25 {
+  width: 25%;
+}
+
+.btn {
+  padding: 0 24px;
+  background-color: #fafafa;
+  height: 50px;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.btn-deals {
+  height: 40px;
+  padding: 0 16px;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+}
+
+.label-active {
+  transform: translate3d(0, -28px, 0) scale(1);
+  font-size: 8px !important;
+}
+
+.label-invalid {
+  transition: all 0s;
+  transform: translate3d(0, -28px, 0) scale(1);
+  font-size: 8px !important;
+}
+
+@media (max-width: 1166px) {
+  .playlist-box {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .footer-box {
+    width: 100%;
+  }
+  .lease-items {
+    overflow: hidden;
+  }
+  .kits {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 960px) {
+  .nav-list {
+    position: absolute;
+    left: 0;
+    height: 500px;
+    top: 64px;
+    width: 300px;
+    background-color: #000000;
+    z-index: 100;
+    transform: translateX(-120%);
+    transition: all 0.6s ease-in;
+    flex-direction: column;
+  }
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  .nav-left {
+    display: flex;
+    height: 100%;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-burger {
+    height: 64px;
+  }
+  .nav-mobile {
+    display: unset;
+  }
+  .header {
+    height: 525px;
+  }
+  .header-search {
+    display: none;
+  }
+  .playlist-head, .playlist-time, .playlist-bpm, .playlist-tags {
+    display: none;
+  }
+  .playlist-item {
+    justify-content: space-between;
+  }
+  .footer-box {
+    flex-direction: column;
+  }
+  .contact-info {
+    flex-direction: column;
+  }
+  .contact-info-md1 {
+    width: 100%;
+  }
+  .contact input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 590px) {
+  .contact-box {
+    width: 100%;
+    padding: 0 30px;
+  }
+}
