@@ -974,11 +974,19 @@ button {
     .header {
         height: 525px !important;
         background-color: #000000;
+        &-track {
+            width: 300px !important;
+        }
     }
     .contact {
         &-box {
             width: 100%;
             padding: 0 30px;
+        }
+        &-info {
+            & label {
+                width: 250px;
+            }
         }
     }
     .nav {

@@ -1041,9 +1041,15 @@ button {
     height: 525px !important;
     background-color: #000000;
   }
+  .header-track {
+    width: 300px !important;
+  }
   .contact-box {
     width: 100%;
     padding: 0 30px;
+  }
+  .contact-info label {
+    width: 250px;
   }
   .nav-fun {
     gap: 0;
