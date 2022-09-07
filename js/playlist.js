@@ -95,7 +95,7 @@ const playlistArray = [
 playlistArray.forEach((item) => {
     const playlistHTML = `
         <div class="playlist-item track-audio" data-id=${item.id}>
-            <div class="playlist-img img-track" audio="${item.audio}" img="${item.img}" style="background: url('./../img/beat/${item.img}'); background-size: cover;" src="${item.audio}"><audio></audio></div>
+            <div class="playlist-img img-track" audio="${item.audio}" img="${item.img}" style="background: url('./img/beat/${item.img}'); background-size: cover;" src="${item.audio}"><audio></audio></div>
             <div class="playlist-border"></div>
             <div class="playlist-title per-45 beat-title">${item.title}</div>
             <div class="playlist-time per-10 beat-time">${item.time}</div>
