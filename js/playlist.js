@@ -25,62 +25,96 @@ const playlistArray = [
         audio: 'Broken.mp3'
     },
     {
-        id: 1,
+        id: 2,
         title: 'Beautiful',
         price: '29.99',
         tag1: 'nf',
         tag2: 'halsey',
-        bpm: '122',
+        bpm: '116',
         time: '3:55',
         img: 'beatiful.png',
         audio: 'Beautiful.mp3',
     },
     {
         id: 3,
-        title: 'Beautiful',
+        title: 'Letter to Myself',
         price: '29.99',
-        tag1: 'nf',
-        tag2: 'halsey',
-        bpm: '122',
-        time: '3:55',
-        img: 'fligth.png',
+        tag1: 'eminem',
+        tag2: 'mgk',
+        bpm: '131',
+        time: '3:32',
+        img: 'letter\ to\ myself.png',
+        audio: 'letter\ to\ myself.mp3',
     },
     {
         id: 4,
-        title: 'Flight',
+        title: 'Drive',
+        price: '29.99',
+        tag1: 'nf',
+        tag2: 'halsey',
+        bpm: '118',
+        time: '3:34',
+        img: 'drive.png',
+        audio: 'Drive.mp3'
+    },
+    {
+        id: 5,
+        title: 'Invincible',
         price: '29.99',
         tag1: 'nf',
         tag2: 'halsey',
         bpm: '122',
         time: '3:55',
         img: 'fligth.png',
+        audio: 'Invincible.mp3'
+    },
+    {
+        id: 6,
+        title: 'Fields',
+        price: '29.99',
+        tag1: 'nf',
+        tag2: 'halsey',
+        bpm: '118',
+        time: '2:30',
+        img: 'fields.png',
+        audio: 'Fields.mp3'
+    },
+    {
+        id: 7,
+        title: 'Broken Wings',
+        price: '29.99',
+        tag1: 'nf',
+        tag2: 'halsey',
+        bpm: '130',
+        time: '3:01',
+        img: 'broken\ wings.png',
+        audio: 'Broken\ Wings.mp3'
     },
 ]
-
-
 
 playlistArray.forEach((item) => {
     const playlistHTML = `
         <div class="playlist-item track-audio" data-id=${item.id}>
-            <div class="playlist-img img-track" style="background: url('./../img/beat/${item.img}'); background-size: cover;" src="${item.audio}"><audio></audio></div>
+            <div class="playlist-img img-track" audio="${item.audio}" img="${item.img}" style="background: url('./../img/beat/${item.img}'); background-size: cover;" src="${item.audio}"><audio></audio></div>
             <div class="playlist-border"></div>
-            <div class="playlist-title per-45">${item.title}</div>
-            <div class="playlist-time per-10">${item.time}</div>
-            <div class="playlist-bpm per-5">122</div>
+            <div class="playlist-title per-45 beat-title">${item.title}</div>
+            <div class="playlist-time per-10 beat-time">${item.time}</div>
+            <div class="playlist-bpm per-5 beat-bpm">${item.bpm}</div>
             <div class="playlist-tags per-20">
-                <div class="playlist-tag"><a href="">#NF</a></div>
-                <div class="playlist-tag"><a href="">#HALSEY</a></div>
+                <div class="playlist-tag"><a href="" class="beat-tag1">#${item.tag1}</a></div>
+                <div class="playlist-tag"><a href="" class="beat-tag2">#${item.tag2}</a></div>
             </div>
             <div class="playlist-fun per-20">
-                <div class="playlist-share"></div>
-                <div class="playlist-load"></div>
+                <div class="playlist-share beat-share"></div>
+                <div class="playlist-load beat-load"></div>
                 <div class="playlist-btn">
                     <button class="playlist-button add-cart">
                         <div class="playlist-button-icon"></div>
                         <div class="playlist-button-price">
                             <span class="playlist-button-val">$</span>
-                            <span class="playlist-button-num beat-price">29.99</span>
+                            <span class="playlist-button-num beat-price">${item.price}</span>
                         </div>
+                        <div class="playlist-button-active">IN CART</div>
                     </button>
                 </div>
             </div>
@@ -108,4 +142,22 @@ function timeChange() {
             }
         }
     })
+}
+
+
+//Форматирую прайсы
+
+
+const priceFormatTotal = wNumb({
+    mask: '.',
+    decimals: 2,
+    thousand: ' ',
+})
+
+const beatPrice = document.querySelectorAll('.beat-price');
+
+for(let i = 0; i < beatPrice.length; i++) {
+    beatPrice[i].innerText = priceFormatTotal.to(+beatPrice[i].innerText)
+
+    console.log(priceFormatTotal.to(29.99) + priceFormatTotal.to(29.99))
 }
