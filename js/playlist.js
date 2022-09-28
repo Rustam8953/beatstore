@@ -17,10 +17,10 @@ const playlistArray = [
         id: 1,
         title: 'Broken',
         price: '29.99',
-        tag1: 'nf',
-        tag2: 'halsey',
-        bpm: '122',
-        time: '3:20',
+        tag1: 'imagine dragon',
+        tag2: 'eminem',
+        bpm: '90',
+        time: '3:08',
         img: 'broken.png',
         audio: 'Broken.mp3'
     },
@@ -31,7 +31,7 @@ const playlistArray = [
         tag1: 'nf',
         tag2: 'halsey',
         bpm: '116',
-        time: '3:55',
+        time: '3:37',
         img: 'beatiful.png',
         audio: 'Beautiful.mp3',
     },
@@ -50,8 +50,8 @@ const playlistArray = [
         id: 4,
         title: 'Drive',
         price: '29.99',
-        tag1: 'nf',
-        tag2: 'halsey',
+        tag1: 'x ambassadors',
+        tag2: 'imagine dragons',
         bpm: '118',
         time: '3:34',
         img: 'drive.png',
@@ -65,7 +65,7 @@ const playlistArray = [
         tag2: 'halsey',
         bpm: '122',
         time: '3:55',
-        img: 'fligth.png',
+        img: '',
         audio: 'Invincible.mp3'
     },
     {
@@ -84,7 +84,7 @@ const playlistArray = [
         title: 'Broken Wings',
         price: '29.99',
         tag1: 'nf',
-        tag2: 'halsey',
+        tag2: 'witt lowry',
         bpm: '130',
         time: '3:01',
         img: 'broken\ wings.png',
@@ -95,14 +95,16 @@ const playlistArray = [
 playlistArray.forEach((item) => {
     const playlistHTML = `
         <div class="playlist-item track-audio" data-id=${item.id}>
-            <div class="playlist-img img-track" audio="${item.audio}" img="${item.img}" style="background: url('./img/beat/${item.img}'); background-size: cover;" src="${item.audio}"><audio></audio></div>
+            <div class="playlist-img img-track" audio="${item.audio}" img="${item.img}" style="background: url('./img/beat/${item.img}'); background-size: cover;" src="${item.audio}"><audio preload="auto" src="./audio/${item.audio}"></audio></div>
+            <a href="./beat-page.html" class="beat-link per-45">
+                <div class="playlist-title beat-title">${item.title}</div>
+            </a>
             <div class="playlist-border"></div>
-            <div class="playlist-title per-45 beat-title">${item.title}</div>
             <div class="playlist-time per-10 beat-time">${item.time}</div>
             <div class="playlist-bpm per-5 beat-bpm">${item.bpm}</div>
             <div class="playlist-tags per-20">
-                <div class="playlist-tag"><a href="" class="beat-tag1">#${item.tag1}</a></div>
-                <div class="playlist-tag"><a href="" class="beat-tag2">#${item.tag2}</a></div>
+                <div class="playlist-tag" role='button'><a href="" class="beat-tag beat-tag1">#${item.tag1}</a></div>
+                <div class="playlist-tag" role='button'><a href="" class="beat-tag beat-tag2">#${item.tag2}</a></div>
             </div>
             <div class="playlist-fun per-20">
                 <div class="playlist-share beat-share"></div>
@@ -135,11 +137,11 @@ timeChange()
 function timeChange() {
     playListTime.forEach((item) => {
         for(let i = 0; i < allAudio.length; i++) {
-            allAudio[i].onloadeddata = () => {
-                const timeValue = allAudio[i].duration/60;
-                console.log(timeValue);
-                item.innerText = timeValue;
-            }
+            // allAudio[i].onloadeddata = () => {
+            //     const timeValue = allAudio[i].duration/60;
+            //     console.log(timeValue);
+            //     item.innerText = timeValue;
+            // }
         }
     })
 }
