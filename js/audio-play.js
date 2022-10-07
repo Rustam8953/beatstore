@@ -34,6 +34,10 @@ window.addEventListener('resize', () => {
     num960()
 })
 
+window.addEventListener('DOMContentLoaded', () => {
+    num960();
+})
+
 num960()
 
 console.log(num)
@@ -158,11 +162,9 @@ function loop() {
 function num960() {
     if(screen.width <= 590) {
         num = 31
-    }
-    if(screen.width <= 960) {
+    } else if(screen.width <= 960) {
         num = 63;
-    }
-    if(screen.width >= 960) {
+    } else {
         num = 100;
     }
 }
